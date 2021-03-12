@@ -1,0 +1,50 @@
+﻿@model agenda.Models.brokers
+
+@{
+    ViewBag.Title = "profilBrokers";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.lastname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.firstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phoneNumber)
+        </dd>
+                
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edition", "Edit", new { id = Model.idBroker }) |
+    @Html.ActionLink("Retour à la liste", "listBrokers")
+</p>

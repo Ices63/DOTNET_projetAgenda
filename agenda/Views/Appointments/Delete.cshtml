@@ -1,0 +1,53 @@
+﻿@model agenda.Models.appointments
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>Etes-vous sûr de vouloir suppimer ce rendez-vous ?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.dateHour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateHour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.brokers.lastname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.brokers.lastname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customers.lastname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customers.lastname)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Supprimer" class="btn btn-default" /> |
+            @Html.ActionLink("Retour", "Details")
+        </div>
+    }
+</div>

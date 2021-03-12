@@ -1,0 +1,58 @@
+﻿@model IEnumerable<agenda.Models.Customers>
+
+@{
+    ViewBag.Title = "listCustomers";
+}
+
+<h2>Liste des Clients</h2>
+
+<p>
+    @Html.ActionLink("Nouveau Client", "addCustomers")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.customer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.firstname)
+        </th>
+        <th>
+        </th>
+        <th>
+        </th>
+        <th>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.customer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.firstname)
+            </td>
+            <td>              
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+                @Html.ActionLink("Edition", "Edit", new { id = item.idCustomer }) |
+                @Html.ActionLink("Details", "profilCustomers", new { id = item.idCustomer }) |
+                @Html.ActionLink("Supprimer", "Delete", new { id = item.idCustomer })
+            </td>
+        </tr>
+    }
+
+</table>

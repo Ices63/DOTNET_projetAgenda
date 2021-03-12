@@ -1,0 +1,52 @@
+﻿@model IEnumerable<agenda.Models.brokers>
+
+@{
+    ViewBag.Title = "listBrokers";
+}
+
+<h2>Liste des Courtiers</h2>
+
+<p>
+    @Html.ActionLink("Nouveau Courtier", "addBrokers")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.lastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.firstname)
+        </th>
+        <th>
+           
+        </th>
+        <th>
+           
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.firstname)
+            </td>
+            <td>
+              
+            </td>
+            <td>
+               
+            </td>
+            <td>
+                @Html.ActionLink("Edition", "Edit", new { id = item.idBroker }) |
+                @Html.ActionLink("Details", "profilBrokers", new { id = item.idBroker }) |
+                @Html.ActionLink("Supprimer", "Delete", new { id = item.idBroker })
+            </td>
+        </tr>
+    }
+
+</table>
